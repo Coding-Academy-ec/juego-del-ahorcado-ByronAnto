@@ -1,4 +1,5 @@
-import random
+import random # Importamos el módulo random para seleccionar palabras aleatorias.
+# Lista de palabras válidas para el juego.
 
 AHORCADO_DIBUJO = [
     """
@@ -40,8 +41,8 @@ def seleccionar_palabra():
     Esta función debe seleccionar y devolver una palabra aleatoria de la lista.
     Bug: Asegúrate de que la función realmente devuelve una palabra.
     """
-    palabras = ['python', 'programacion', 'desarrollo', 'ahorcado']
-    return random.choice(palabras_2)  # Este return está incorrecto.
+    palabra = ['python', 'programacion', 'desarrollo', 'ahorcado']
+    return random.choice(palabra)  # Este return está incorrecto.
 
 def mostrar_progreso(palabra, letras_adivinadas):
     """
@@ -51,7 +52,7 @@ def mostrar_progreso(palabra, letras_adivinadas):
     """
     # Falta un return. Asegúrate de que se retorne el progreso correctamente.
     progreso = ' '.join(letra if letra in letras_adivinadas else '_' for letra in palabra)
-    return progreso_2  # Este return está incorrecto.
+    return progreso # Este return está incorrecto.
 
 def verificar_letra(letra, palabra):
     """
@@ -59,7 +60,7 @@ def verificar_letra(letra, palabra):
     Bug: Asegúrate de que la función devuelve True o False correctamente.
     """
     # Si no hay un return aquí, no se verificará la letra correctamente.
-    return letra in palabras  # Este return está incorrecto.
+    return letra in palabra # Este return está incorrecto.
 
 def juego_ahorcado():
     """
