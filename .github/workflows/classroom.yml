@@ -25,7 +25,8 @@ jobs:
         max-score: 100
     - name: Autograding Reporter
       uses: education/autograding-grading-reporter@v1
-      with:
-        runners: ["ahorcado-tests"]  # Cambia esto a lista
       env:
-        AHORCADO-TEST_RESULTS: "${{steps.ahorcado-tests.outputs.result}}"
+        AHORCADO_TEST_RESULTS: "${{steps.ahorcado-tests.outputs.result}}"
+      with:
+        runners: ["ahorcado-tests"]
+
