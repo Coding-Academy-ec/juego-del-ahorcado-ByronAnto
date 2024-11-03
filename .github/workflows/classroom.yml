@@ -28,4 +28,5 @@ jobs:
         env:
           AHORCADO_TEST_RESULTS: "${{ steps.ahorcado-tests.outputs.result }}"
         with:
-          runners: "ahorcado-tests"  # Este es el formato correcto
+          runners: "ahorcado-tests"  # Asegúrate de que sea así
+
