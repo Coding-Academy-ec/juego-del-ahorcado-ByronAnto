@@ -26,7 +26,7 @@ jobs:
       - name: Autograding Reporter
         uses: education/autograding-grading-reporter@v1
         with:
-          runners: "ahorcado-tests"  # Asegúrate de que esto esté en este formato.
-          token: ${{ secrets.GITHUB_TOKEN }}  # Asegúrate de incluir el token correcto.
+          runners: "ahorcado-tests"  # Asegúrate de que esto esté correctamente formateado.
+          token: ${{ secrets.GITHUB_TOKEN }}  # Usa el token correcto.
         env:
           AHORCADO_TEST_RESULTS: "${{ steps.ahorcado-tests.outputs.result }}"
