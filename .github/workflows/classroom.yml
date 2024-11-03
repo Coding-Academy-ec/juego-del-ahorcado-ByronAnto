@@ -1,20 +1,19 @@
 name: Autograding Tests
 on:
-  - push
-  - workflow_dispatch
-  - repository_dispatch
-permissions:
-  checks: write
-  actions: read
-  contents: read
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  repository_dispatch:
+
 jobs:
   run-autograding-tests:
     runs-on: ubuntu-latest
-    if: github.actor != 'github-classroom[bot]'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Ahorcado tests
+      
+      - name: Run tests
         id: ahorcado-tests
         uses: education/autograding-command-grader@v1
         with:
@@ -23,11 +22,11 @@ jobs:
           command: pytest
           timeout: 10
           max-score: 100
-      - name: Mostrar resultados de las pruebas
-        run: echo "${{ steps.ahorcado-tests.outputs.result }}"
+
       - name: Autograding Reporter
         uses: education/autograding-grading-reporter@v1
+        with:
+          runners: "ahorcado-tests"  # Asegúrate de que esto esté en este formato.
+          token: ${{ secrets.GITHUB_TOKEN }}  # Asegúrate de incluir el token correcto.
         env:
           AHORCADO_TEST_RESULTS: "${{ steps.ahorcado-tests.outputs.result }}"
-        with:
-          runners: "ahorcado-tests"
