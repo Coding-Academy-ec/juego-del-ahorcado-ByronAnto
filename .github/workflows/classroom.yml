@@ -23,10 +23,11 @@ jobs:
           command: pytest
           timeout: 10
           max-score: 100
+      - name: Mostrar resultados de las pruebas
+        run: echo "${{ steps.ahorcado-tests.outputs.result }}"
       - name: Autograding Reporter
         uses: education/autograding-grading-reporter@v1
         env:
           AHORCADO_TEST_RESULTS: "${{ steps.ahorcado-tests.outputs.result }}"
         with:
           runners: "ahorcado-tests"  # Asegúrate de que sea así
-
