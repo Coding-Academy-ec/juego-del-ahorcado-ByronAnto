@@ -91,7 +91,7 @@ def juego_ahorcado():
             print(f"¡Felicidades, adivinaste la palabra: {palabra}!")  # Este print está correcto.
             break
     else:
-        print(AHORCADO_DIBUJO[max_intentos])  # Este print está correcto.
+        print(AHORCADO_DIBUJO[max_intentos])  # Este print está correcto.#
         print(f"Perdiste. La palabra era: {palabra}")  # Este print está correcto.
 
 if __name__ == "__main__":
